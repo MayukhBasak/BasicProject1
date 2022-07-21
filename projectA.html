@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>projectA</title>
+    <style>
+        body{
+            background-image: linear-gradient(to right,#A162F7, #6F88FC);
+            height: 500px;
+            width: 900px;
+        }
+        #temperature{
+            background-color: #45E3FF;
+            border: 5px solid #FEFFF1;
+            box-shadow:5px 5px 5px  #FEFFF1;
+            border-radius: 10px;
+            text-align: center;
+            padding: 5px;
+            margin: 100px 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: darkblue">this a tepterature converter function</h1>
+  <div id="temperature">
+    <div id="celciuus">
+    <level>Celcious</level><br>
+    <input type="number" value="0" class="input" id="cel">
+    </div>
+    <div id="fahrenhite">
+        <level>Fahrenhite</level><br>
+        <input type="number" value="32" id="fah" class="input">
+    </div>
+  </div>
+  <script>
+    let cel= document.getElementById("cel")
+    let fah= document.getElementById("fah")
+    cel.addEventListener("input", function(){
+        let c=this.value;
+        let f=(c*9/5)+32;
+        if(!Number.isInteger()){
+            f=f.toFixed(4);
+        }
+        fah.value=f;
+    })
+    fah.addEventListener("input", function(){
+        let f=this.value;
+        let c=(f-32)*5/9;
+        if(!Number.isInteger()){
+            c=c.toFixed(4);
+        }
+        cel.value=c;
+    })
+  </script>
+</body>
+</html>
